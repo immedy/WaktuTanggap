@@ -3,11 +3,6 @@
 <div class="d-flex flex-column flex-root">
     <div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed" style="background-image: url(assets/media/illustrations/sketchy-1/14.png">
         <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
-            <!--begin::Logo-->
-            <a href="../../demo1/dist/index.html" class="mb-12">
-                
-            </a>
-            <!--end::Logo-->
             <!--begin::Wrapper-->
             <div class="w-lg-450px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
                 <!--begin::Form-->
@@ -15,8 +10,7 @@
                     @csrf
                     <!--begin::Heading-->
                     <div class="text-center mb-10">
-                        <!--begin::Title-->
-                        <img alt="Logo" src="assets/media/logos/logo-1.svg" class="h-40px mb-10"  />
+                        
                         <h1 class="text-dark mb-3">Sistem Waktu Tanggap</h1>
                         <h1 class="text-dark mb-3">Unit SIMRS Dayaku Raja</h1>
                         <!--end::Title-->

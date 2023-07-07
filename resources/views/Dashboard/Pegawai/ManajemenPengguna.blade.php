@@ -26,9 +26,9 @@
                                             <th class="w-25px">
                                                 No
                                             </th>
-                                            <th class="min-w-300px">Nama </th>
+                                            <th class="min-w-200px">Nama </th>
                                             <th>username</th>
-                                            <th>Hak Akses</th>
+                                            
                                             <th>Status</th>
                                             <th class="d-flex justify-content-end flex-shrink-0">Actions</th>
                                         </tr>
@@ -55,17 +55,7 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="d-flex justify-content-start flex-column">
-                                                            <a class="text-dark fw-bolder text-hover-primary fs-6">
-                                                                @if (!empty($p->hakakses->hakakses))
-                                                                    {{ $p->hakakses->hakakses }}"
-                                                                @endif
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </td>
+                                                
                                                 <td>
                                                     @if ($p->status == 1)
                                                         <div
@@ -160,16 +150,7 @@
             <div class="modal-content">
                 <form action="{{ route('EditUsername') }}" method="post">
                     @method('PUT')
-                    @csrf
-                    <div class="modal-header">
-                        <h5 class="modal-title"></h5>
-                        <!--begin::Close-->
-                        <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal"
-                            aria-label="Close">
-                            <span class="svg-icon svg-icon-2x"></span>
-                        </div>
-                        <!--end::Close-->
-                    </div>
+                    @csrf                    
                     <div class="modal-body">
                         <div class="fv-row mb-3">
                             <label class="text-dark fw-bolder text-hover-primary fs-6">User Name</label>
