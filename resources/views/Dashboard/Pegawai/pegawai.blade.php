@@ -18,7 +18,7 @@
                                     <input type="text" name="caripegawai" value="{{ request('caripegawai') }}" class="form-control" placeholder="Cari Pegawai" />
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn-icon btn-outline-warning btn-active-light-info border" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Keluar"><span
+                                    <button type="submit" class="btn btn-icon btn-outline-warning btn-active-light-info border" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cari Pegawai"><span
                                         class="indicator-label">
                                         <span class="svg-icon svg-icon-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
@@ -154,10 +154,10 @@
                                                                 </svg>
                                                             </span>
                                                         </a>
-                                                        <a href="/HakAkses"
+                                                        <a href="javascript:void(0)" data-url="{{ route('CariPegawai', $p->id) }}" id="pegawai_id"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                                            data-bs-toggle="tooltip" data-bs-placement="Top"
-                                                            title="Hak Akses">
+                                                            data-bs-toggle="tooltip" data-bs-placement="Top" 
+                                                            title="CariPegawai">
                                                             <span class="svg-icon svg-icon-3">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16"
                                                                     height="16" fill="currentColor"
@@ -188,6 +188,7 @@
             </div>
         </div>
     </div>
+    {{-- modal Tambah Pegawai --}}
     <div class="modal fade " tabindex="-1" id="modaldetailreferensi">
         <div class="modal-dialog border border-danger">
             <div class="modal-content">
@@ -222,6 +223,46 @@
                                 Simpan
                             </span>
                         </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{-- Modela Akhir Tambah Pegawai --}}
+
+    {{-- Model Buat Username --}}
+    <div class="modal fade " tabindex="-1" id="PegawaiModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="" method="">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="nama"></h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="fv-row mb-3">
+                            <label class="text-dark fw-bolder text-hover-primary fs-6 mb-3">Username</label>
+                            <input type="text" name="username" class="form-control form-control-solid mb-3 mb-lg-0"
+                                placeholder="" id="user-username" />
+                            <input type="text" name="id" id="user-id" hidden />
+                            <input type="text" name="pegawai_id" id="user-pegawai" hidden />
+                        </div>
+                        <div class="fv-row mb-3">
+                            <label class="text-dark fw-bolder text-hover-primary fs-6 mb-3">Password</label>
+                            <input type="password" name="password" class="form-control form-control-solid mb-3 mb-lg-0"
+                                placeholder="" id="user-password" />
+                        </div>
+                        <div class="fv-row mb-3">
+                            <label class="text-dark fw-bolder text-hover-primary fs-6 mb-3">Konfirmasi Password</label>
+                            <input type="password" name="confirm-password"
+                                class="form-control form-control-solid mb-3 mb-lg-0" placeholder=""
+                                id="confirm-password" />
+                            <small id="confirmation-error" class="text-danger d-none">Password tidak sama.</small>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary" id="validasi_password" disabled>Simpan</button>
                     </div>
                 </form>
             </div>

@@ -40,6 +40,7 @@ Route::controller(PegawaiController::class)->group(function () {
     route::get('/pegawai','index')->middleware('auth','admin');
     route::get('/pegawai/{id}/edit','TampilPegawai')->middleware('auth','admin');
     route::post('/addpegawai','TambahPegawai')->middleware('auth','admin')->name('addpegawai');
+    route::get('/caripegawai/{id}','CariPegawai')->middleware('auth','admin')->name('CariPegawai');
 
 });
 Route::controller(ReferensiController::class)->group(function () {

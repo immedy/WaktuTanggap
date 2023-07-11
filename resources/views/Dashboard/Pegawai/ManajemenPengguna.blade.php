@@ -2,7 +2,7 @@
 @section('DashboardLayout')
     <div class="app-main flex-column flex-row-fluid">
         <!--begin::Container-->
-        <div id="user-table" class="container-fluid">
+        <div id="" class="container-fluid">
             <div class="row">
                 <div class="col-xl">
                     <!--begin::Tables Widget 9-->

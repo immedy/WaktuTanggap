@@ -29,6 +29,7 @@
     <script src="{{ asset('assets/js/Ckeditor.js') }}"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
     <script src="{{ asset('assets/js/referensi.js') }}"></script>
+    <script src="{{ asset('assets/js/PegawaiDetail.js') }}"></script>
     <script src="{{ asset('assets/js/UserDetail.js') }}"></script>
     <script src="{{ asset('assets/js/validationpassword.js') }}"></script>
     <script src="{{ asset('assets/js/date/settings.js') }}"></script>

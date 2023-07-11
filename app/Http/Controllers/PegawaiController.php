@@ -39,6 +39,11 @@ class PegawaiController extends Controller
             'hakakses' => hakakses::all()
         ]);
     }
+    public function CariPegawai($id)
+    {
+        $pegawai = pegawai::find($id);
+        return response()->json($pegawai);
+    }
     
 
 }

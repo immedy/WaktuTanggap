@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pegawai;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -71,6 +72,7 @@ class UserNameController extends Controller
             'users' => User::all(),
         ]);
     }
+
     public function CariUsername($id)
     {
        $Username = user::find($id);
