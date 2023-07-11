@@ -49,12 +49,12 @@ class Handler extends ExceptionHandler
             //
         });
     }
-    // untuk membuat halaman menjadi error 404
-    public function render($request, Throwable $e)
-    {
-        if ($e instanceof ModelNotFoundException || $e instanceof PDOException){
-            return response()->view('Erorr.404',[], 404);
-        }
-        return parent::render($request, $e);
-    }
+    //*untuk membuat halaman menjadi error 404
+    // public function render($request, Throwable $e)
+    // {
+    //     if ($e instanceof ModelNotFoundException || $e instanceof PDOException){
+    //         return response()->view('Erorr.404',[], 404);
+    //     }
+    //     return parent::render($request, $e);
+    // }
 }

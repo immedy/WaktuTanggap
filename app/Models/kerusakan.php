@@ -28,8 +28,8 @@ class kerusakan extends Model
     {
         return Carbon::parse($this->waktu_pelaporan)->isoFormat('dddd, D MMMM Y, H:mm:ss');
     }
-    public function getWaktuResponAttribute()
+    public function getResponTimeAttribute()
     {
-        return Carbon::parse($this->respon_time)->isoFormat('dddd, D MMMM Y, H:mm:ss');
+        return Carbon::parse($this->waktu_respon)->isoFormat('dddd, D MMMM Y, H:mm:ss');
     }
 }

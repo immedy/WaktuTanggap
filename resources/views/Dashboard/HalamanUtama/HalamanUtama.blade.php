@@ -81,8 +81,8 @@
                                             </td>
                                             <td>
                                                 <span class="text-primary fw-bolder  d-block fs-6">
-                                                    @if (!empty($p->Waktu_Respon))
-                                                        {{ $p->Waktu_Respon }}
+                                                    @if (!empty($p->Respon_Time))
+                                                        {{ $p->Respon_Time }}
                                                     @endif
                                                 </span>
                                             </td>
