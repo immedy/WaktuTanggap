@@ -237,12 +237,13 @@
                 <form action="" method="">
                     <div class="modal-header">
                         <h5 class="modal-title" id="nama"></h5>
+                        <h5 class="modal-title" id="username"></h5>
                     </div>
                     <div class="modal-body">
                         <div class="fv-row mb-3">
                             <label class="text-dark fw-bolder text-hover-primary fs-6 mb-3">Username</label>
                             <input type="text" name="username" class="form-control form-control-solid mb-3 mb-lg-0"
-                                placeholder="" id="user-username" />
+                                placeholder="" id="username" />
                             <input type="text" name="id" id="user-id" hidden />
                             <input type="text" name="pegawai_id" id="user-pegawai" hidden />
                         </div>

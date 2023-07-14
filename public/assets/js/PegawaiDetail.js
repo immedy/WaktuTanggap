@@ -4,7 +4,14 @@ $(document).ready(function() {
         $.get(userURL, function(data) {
             $('#PegawaiModal').modal('show');
             $('#nama').text(data.nama);
+            $('#username').text(data.user.username);
         })
     });
-
 });
+
+
+
+
+
+
+

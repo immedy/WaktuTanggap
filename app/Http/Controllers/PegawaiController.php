@@ -11,7 +11,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class PegawaiController extends Controller
 {
-    
+
     public function index()
     {
         return view('Dashboard.Pegawai.pegawai', [
@@ -34,7 +34,7 @@ class PegawaiController extends Controller
     }
     public function TampilPegawai($id)
     {
-        return view ('Dashboard.Pegawai.Username',[
+        return view('Dashboard.Pegawai.Username', [
             'pegawai' => pegawai::findOrfail($id),
             'hakakses' => hakakses::all()
         ]);
@@ -44,6 +44,4 @@ class PegawaiController extends Controller
         $pegawai = pegawai::find($id);
         return response()->json($pegawai);
     }
-    
-
 }
