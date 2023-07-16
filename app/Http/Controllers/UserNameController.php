@@ -14,6 +14,7 @@ class UserNameController extends Controller
     {
         return view('Layout.login');
     }
+    
     public function index(Request $request)
     {
         $id = $request->id;
@@ -23,7 +24,8 @@ class UserNameController extends Controller
             'password' => 'required'
         ]);
         $ValidasiData['password']= bcrypt($ValidasiData['password']);
-        User::updateOrInsert(['id'=> $id, 'status' => 1, 'akses'=> 0], $ValidasiData);
+        // dd($ValidasiData);
+        User::updateOrInsert(['pegawai_id'=> $id, 'status' => 1, 'akses'=> 0], $ValidasiData);
         if ($ValidasiData){
             Alert::success('username Berhasil Dibuat');
             return redirect()->back();
@@ -88,6 +90,7 @@ class UserNameController extends Controller
             'password' => 'required'
         ]);
         $ValidasiData['password']= bcrypt($ValidasiData['password']);
+        // dd($ValidasiData);
         User::updateOrInsert(['id'=> $id, 'status' => 1], $ValidasiData);
         return back();
     }

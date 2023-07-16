@@ -41,7 +41,7 @@ class PegawaiController extends Controller
     }
     public function CariPegawai($id)
     {
-        $pegawai = pegawai::find($id);
+        $pegawai = pegawai::with('user')->find($id);
         return response()->json($pegawai);
     }
 }

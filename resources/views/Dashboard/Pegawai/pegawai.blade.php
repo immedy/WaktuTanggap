@@ -154,7 +154,7 @@
                                                                 </svg>
                                                             </span>
                                                         </a>
-                                                        <a href="javascript:void(0)" data-url="{{ route('CariPegawai', $p->id) }}" id="pegawai_id"
+                                                        <a href="javascript:void(0)" data-url="{{ route('CariPegawai', $p->id) }}" id="PEGAWAI"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
                                                             data-bs-toggle="tooltip" data-bs-placement="Top" 
                                                             title="CariPegawai">
@@ -234,18 +234,20 @@
     <div class="modal fade " tabindex="-1" id="PegawaiModal">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="" method="">
+                <form action="{{ route('EditUsername') }}" method="post">
+                    @method('PUT')
+                    @csrf
                     <div class="modal-header">
                         <h5 class="modal-title" id="nama"></h5>
-                        <h5 class="modal-title" id="username"></h5>
                     </div>
                     <div class="modal-body">
                         <div class="fv-row mb-3">
                             <label class="text-dark fw-bolder text-hover-primary fs-6 mb-3">Username</label>
+                            <input type="text" id="id" hidden>
+                            <input type="text" id="pegawai_id" hidden>
                             <input type="text" name="username" class="form-control form-control-solid mb-3 mb-lg-0"
-                                placeholder="" id="username" />
-                            <input type="text" name="id" id="user-id" hidden />
-                            <input type="text" name="pegawai_id" id="user-pegawai" hidden />
+                               id="data-username" />
+                               {{-- <input type="text" name="id" id="id" hidden />                           --}}
                         </div>
                         <div class="fv-row mb-3">
                             <label class="text-dark fw-bolder text-hover-primary fs-6 mb-3">Password</label>
