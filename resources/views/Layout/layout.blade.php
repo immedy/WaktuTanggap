@@ -31,9 +31,8 @@
     <script src="{{ asset('assets/js/referensi.js') }}"></script>
     <script src="{{ asset('assets/js/PegawaiDetail.js') }}"></script>
     <script src="{{ asset('assets/js/UserDetail.js') }}"></script>
-    <script src="{{ asset('assets/js/validationpassword.js') }}"></script>
-    <script src="{{ asset('assets/js/date/settings.js') }}"></script>
-
+    <script src="{{ asset('assets/js/validationpassword.js') }}"></script>    
+    <script src="{{ asset('assets/js/tanggal.js') }}"></script>
 </body>
 <!--end::Body-->
 

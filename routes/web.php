@@ -51,6 +51,9 @@ Route::controller(ReferensiController::class)->group(function () {
 
 });
  Route::controller(LaporanKerusakanController::class)->group(function(){
+    route::get('/suratmenyurat','surat')->middleware('auth','admin');
+    route::post('/AddSurat','AddSurat')->middleware('auth','admin')->name('AddSurat');
+    route::get('/file/{id}','SuratPermohonan')->middleware('auth')->name('SuratPermohonan');
     route::get('/','TampilLaporan')->middleware('auth');
     route::post('/Kirim','KirimLaporan')->middleware('auth')->name('KirimLaporan');
 });

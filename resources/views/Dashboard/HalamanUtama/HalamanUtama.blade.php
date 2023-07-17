@@ -154,7 +154,7 @@
                         <div class="fv-row mb-3">
                             <label class="text-dark fw-bolder text-hover-primary fs-6">Waktu Pelaporan</label>
                             <input class="form-control form-control-solid mb-3 mb-lg-0" name="waktu_pelaporan"
-                                id="kt_datepicker_1" />
+                                id="Tanggal_Kerusakan" />
                         </div>
                     </div>
 

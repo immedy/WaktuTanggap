@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\kerusakan;
+use App\Models\nosurat;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,6 +34,30 @@ class LaporanKerusakanController extends Controller
         kerusakan::create($KirimLaporan);
         if ($KirimLaporan) {
             Alert::success('Pegawai Berhasil Di tambahkan');
+        }
+        return back();
+    }
+    public function surat()
+    {
+        return view('Dashboard.Surat.SuratKeluar',[
+            'surat' => nosurat::all()
+        ]);
+    }
+
+    public function AddSurat(Request $request)
+    {
+        $ValidasiSurat = $request->validate([
+            'nosurat' =>        'required',
+            'perihal' =>        'required',
+            'tanggal' =>        'required',
+            'suratpermohonan' => 'required|mimes:PDF,pdf|max:1028',
+            'suratrekomendasi' => 'required|mimes:PDF,pdf|max:1028',
+        ]);
+        $ValidasiSurat['suratpermohonan'] = $request->file('suratpermohonan')->store('suratpermohonan');
+        $ValidasiSurat['suratrekomendasi'] =  $request->file('suratrekomendasi')->store('suratrekomendasi');
+        nosurat::create($ValidasiSurat);
+        if ($ValidasiSurat) {
+            Alert::success('Surat Berhasil diupload');
         }
         return back();
     }
