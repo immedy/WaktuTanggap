@@ -45,7 +45,7 @@
                                         <th class="min-w-120px">Jumlah</th>
                                         <th class="min-w-120px">Waktu Pelaporan</th>
                                         <th class="min-w-140px">Waktu Respon</th>
-                                        <th class="min-w-90px">status</th>                                       
+                                        <th class="min-w-90px">status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -88,10 +88,9 @@
                                             </td>
                                             <td>
                                                 @if ($p->status == 1)
-                                                <span class="text-success fw-bolder  d-block fs-6">diterima</span>
-                                                    
+                                                    <span class="text-success fw-bolder  d-block fs-6">diterima</span>
                                                 @else
-                                                <span class="text-warning fw-bolder  d-block fs-6">belum diterima</span>
+                                                    <span class="text-warning fw-bolder  d-block fs-6">belum diterima</span>
                                                 @endif
                                             </td>
                                         </tr>
