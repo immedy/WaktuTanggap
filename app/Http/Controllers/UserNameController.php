@@ -18,6 +18,7 @@ class UserNameController extends Controller
     public function index(Request $request)
     {
         $id = $request->id;
+    
         $ValidasiData = $request->validate([
             'pegawai_id' => 'required',
             'username'  => 'required',

@@ -63,7 +63,8 @@
                                                         class="form-control form-control-lg form-control-solid"
                                                         id="confirmation" required />
                                                 </div>
-                                                <div id="confirmation-error" class="form-label fs-6 fw-bolder mb-3 text-danger"></div>
+                                                <div id="confirmation-error"
+                                                    class="form-label fs-6 fw-bolder mb-3 text-danger"></div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -104,25 +105,22 @@
         </div>
     </div>
     <script>
-       var confirmationInput = document.getElementById("confirmation");
-var passwordInput = document.getElementById("password");
-var submitButton = document.querySelector("#validasi_password button[type='submit']");
-var confirmationError = document.getElementById("confirmation-error");
+        var confirmationInput = document.getElementById("confirmation");
+        var passwordInput = document.getElementById("password");
+        var submitButton = document.querySelector("#validasi_password button[type='submit']");
+        var confirmationError = document.getElementById("confirmation-error");
 
-confirmationInput.addEventListener("input", function() {
-    var password = passwordInput.value;
-    var password_confirmation = this.value;
+        confirmationInput.addEventListener("input", function() {
+            var password = passwordInput.value;
+            var password_confirmation = this.value;
 
-    if (password !== password_confirmation) {
-        confirmationError.textContent = "Password tidak sama";
-        submitButton.disabled = true;
-    } else {
-        confirmationError.textContent = ""; // Clear the error message
-        submitButton.disabled = false;
-    }
-});
-
-
-
+            if (password !== password_confirmation) {
+                confirmationError.textContent = "Password tidak sama";
+                submitButton.disabled = true;
+            } else {
+                confirmationError.textContent = ""; // Clear the error message
+                submitButton.disabled = false;
+            }
+        });
     </script>
 @endsection

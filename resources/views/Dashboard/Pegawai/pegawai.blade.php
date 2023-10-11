@@ -13,38 +13,51 @@
                                 <span class="card-label fw-bolder fs-3 mb-1">Referensi</span>
                             </h3>
                             <form action="">
-                            <div class="card-toolbar" >
-                                <div>
-                                    <input type="text" name="caripegawai" value="{{ request('caripegawai') }}" class="form-control" placeholder="Cari Pegawai" />
+                                <div class="card-toolbar">
+                                    <div>
+                                        <input type="text" name="caripegawai" value="{{ request('caripegawai') }}"
+                                            class="form-control" placeholder="Cari Pegawai" />
+                                    </div>
+                                    <div>
+                                        <button type="submit"
+                                            class="btn btn-icon btn-outline-warning btn-active-light-info border"
+                                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cari Pegawai"><span
+                                                class="indicator-label">
+                                                <span class="svg-icon svg-icon-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                                        <path
+                                                            d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <a href="#"
+                                            class="btn btn-icon btn-outline-danger btn-active-light-info border"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#modaldetailreferensi"data-bs-toggle="tooltip"
+                                            data-bs-placement="top" title="Tambah Pegawai">
+                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+                                            <span class="indicator-label">
+                                                <span class="svg-icon svg-icon-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-person-plus-fill"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div>
-                                    <button type="submit" class="btn btn-icon btn-outline-warning btn-active-light-info border" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cari Pegawai"><span
-                                        class="indicator-label">
-                                        <span class="svg-icon svg-icon-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
-                                                <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
-                                                <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z"/>
-                                              </svg>
-                                        </span>
-                                    </span>
-                                </button>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-icon btn-outline-danger btn-active-light-info border" data-bs-toggle="modal"
-                                        data-bs-target="#modaldetailreferensi"data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah Pegawai">
-                                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
-                                        <span class="indicator-label">
-                                        <span class="svg-icon svg-icon-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-                                                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                                                <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-                                              </svg>
-                                        </span>
-                                    </span>                                        
-                                    </a>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
                         </div>
                         <!--end::Header-->
                         <!--begin::Body-->
@@ -137,8 +150,7 @@
                                                         </a>
                                                         <a href="#"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                                            data-bs-toggle="tooltip" data-bs-placement="Top"
-                                                            title="Hapus">
+                                                            data-bs-toggle="tooltip" data-bs-placement="Top" title="Hapus">
                                                             <span class="svg-icon svg-icon-3">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                                     height="24" viewBox="0 0 24 24" fill="none">
@@ -154,9 +166,10 @@
                                                                 </svg>
                                                             </span>
                                                         </a>
-                                                        <a href="javascript:void(0)" data-url="{{ route('CariPegawai', $p->id) }}" id="PEGAWAI"
+                                                        <a href="javascript:void(0)"
+                                                            data-url="{{ route('CariPegawai', $p->id) }}" id="PEGAWAI"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                                            data-bs-toggle="tooltip" data-bs-placement="Top" 
+                                                            data-bs-toggle="tooltip" data-bs-placement="Top"
                                                             title="CariPegawai">
                                                             <span class="svg-icon svg-icon-3">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -246,8 +259,8 @@
                             <input type="text" id="id" hidden>
                             <input type="text" id="pegawai_id" hidden>
                             <input type="text" name="username" class="form-control form-control-solid mb-3 mb-lg-0"
-                               id="data-username" />
-                               {{-- <input type="text" name="id" id="id" hidden />                           --}}
+                                id="data-username" />
+                            {{-- <input type="text" name="id" id="id" hidden />                           --}}
                         </div>
                         <div class="fv-row mb-3">
                             <label class="text-dark fw-bolder text-hover-primary fs-6 mb-3">Password</label>

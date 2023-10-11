@@ -167,6 +167,7 @@
                             <input type="file" name="suratpermohonan" class="form-control form-control-solid mb-3 mb-lg-0"
                                 placeholder="" value=""  />
                         </div>
+                        
                         <div class="fv-row ">
                             <label class="text-dark fw-bolder text-hover-primary fs-6">Upload Surat Keluar</label>
                             <input type="file" name="suratrekomendasi" class="form-control form-control-solid mb-3 mb-lg-0"
@@ -185,6 +186,7 @@
                             </span>
                         </button>
                     </div>
+                    
                 </form>
             </div>
         </div>
