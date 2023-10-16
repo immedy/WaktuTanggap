@@ -50,14 +50,24 @@ class LaporanKerusakanController extends Controller
             'nosurat' =>        'required',
             'perihal' =>        'required',
             'tanggal' =>        'required',
-            'suratpermohonan' => 'required|mimes:PDF,pdf|max:1028',
-            'suratrekomendasi' => 'required|mimes:PDF,pdf|max:1028',
+            // 'suratpermohonan' => 'required|mimes:PDF,pdf|max:1028',
+            // 'suratrekomendasi' => 'required|mimes:PDF,pdf|max:1028',
         ]);
-        $ValidasiSurat['suratpermohonan'] = $request->file('suratpermohonan')->store('suratpermohonan');
-        $ValidasiSurat['suratrekomendasi'] =  $request->file('suratrekomendasi')->store('suratrekomendasi');
+        // $ValidasiSurat['suratpermohonan'] = $request->file('suratpermohonan')->store('suratpermohonan');
+        // $ValidasiSurat['suratrekomendasi'] =  $request->file('suratrekomendasi')->store('suratrekomendasi');
         nosurat::create($ValidasiSurat);
         if ($ValidasiSurat) {
             Alert::success('Surat Berhasil diupload');
+        }
+        return back();
+    }
+
+    public function Delete($id)
+    {
+        $hapus = nosurat::findOrFail($id);
+        $hapus ->delete();
+        if ($hapus){
+            Alert::Success('Data terhapus');
         }
         return back();
     }

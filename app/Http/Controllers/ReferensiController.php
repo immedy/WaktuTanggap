@@ -13,7 +13,7 @@ class ReferensiController extends Controller
     {
         return view('Dashboard.referensi.referensi',[
             'referensi' => referensi::all(),
-            'subreferensi' => subreferensi::all()
+            'subreferensi' => subreferensi::orderBy('jenisreferensi','desc')->get()
             
         ]);
     }
