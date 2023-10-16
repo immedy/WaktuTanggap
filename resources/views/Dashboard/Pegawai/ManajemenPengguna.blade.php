@@ -182,7 +182,7 @@
         </div>
     </div>
     {{-- end modal --}}
-    <script>
+    {{-- <script>
         var confirmationInput = document.getElementById("confirm-password");
         var passwordInput = document.getElementById("user-password");
         var submitButton = document.querySelector("#validasi_password");
@@ -200,5 +200,5 @@
                 submitButton.disabled = false;
             }
         });
-    </script>
+    </script> --}}
 @endsection
