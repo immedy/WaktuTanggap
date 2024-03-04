@@ -56,6 +56,7 @@ Route::controller(ReferensiController::class)->group(function () {
     route::get('/file/{id}','SuratPermohonan')->middleware('auth')->name('SuratPermohonan');
     route::get('/','TampilLaporan')->middleware('auth');
     route::post('/Kirim','KirimLaporan')->middleware('auth')->name('KirimLaporan');
+    route::delete('/hapus/{id}','Delete')->middleware('auth')->name('hapus');
 });
 Route::controller(ResponController::class)->group(function(){
     route::get('/ResponLaporanKerusakan','index')->middleware('auth','admin');
