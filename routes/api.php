@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PegawaiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Function_;
@@ -16,12 +17,16 @@ use PhpParser\Builder\Function_;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::post('login', [AuthController::class, 'Auth']);
-Route::get('show', [AuthController::class, 'show']);
-
-// route::controller(AuthController::class)->group(function() {
-//     route::post('login');
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
 // });
+
+
+route::controller(AuthController::class)->group(function() {
+    route::post('login','login');
+    route::get('/user','show')->middleware('auth:api');
+});
+
+route::controller(PegawaiController::class)->group(function(){
+    route::get('show','CariPegawai');
+});

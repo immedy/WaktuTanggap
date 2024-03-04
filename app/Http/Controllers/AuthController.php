@@ -2,24 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\user;
 use App\Models\pegawai;
 use Illuminate\Http\Request;
-use Tymon\JWTAuth\Contracts\Providers\Auth;
-use Tymon\JWTAuth\Facades\JWTAuth;
+use PHPOpenSourceSaver\JWTAuth\Contracts\Providers\Auth as ProvidersAuth;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 class AuthController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function Auth(Request $request)
+   
+     public function login(Request $request)
     {
         $request ->validate([
             'username' => 'required',
             'password' => 'required',
         ]);
         $Auth = $request->only('username', 'password');
-        $token = JWTAuth::attempt($Auth);
+        $token = Auth::attempt($Auth);
         
         if (!$token) {
             return response()->json([
@@ -27,12 +31,12 @@ class AuthController extends Controller
             ], 401);
         }
 
-        $user = JWTAuth::user();
+        $user = Auth::user();
         return response()->json([
             'user' => $user,
             'authorization' => [
                 'token' => $token,
-                'type' => 'Bearer',
+                'type' => 'bearer',
             ]
         ]);
     }
@@ -53,10 +57,18 @@ class AuthController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request)
     {
-        $pegawai = pegawai::with('user')->find($id);
-        $tokenString = JWTAuth::fromUser($pegawai);
+        $user = $request->user();
+        $pegawai = Pegawai::where('id', $user->pegawai_id)->first();
+        
+        return response()->json([
+            'username' => $user->username,
+            'password' => $user->password,
+            'nama' => $pegawai ? $pegawai->nama : null,
+            'nip' => $pegawai ? $pegawai->nip : null
+        ]);
+
     }
 
     /**
