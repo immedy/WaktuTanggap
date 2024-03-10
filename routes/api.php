@@ -28,5 +28,5 @@ route::controller(AuthController::class)->group(function() {
 });
 
 route::controller(PegawaiController::class)->group(function(){
-    route::get('show','CariPegawai');
+    route::get('/show','CariPegawai');
 });
