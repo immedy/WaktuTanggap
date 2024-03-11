@@ -32,8 +32,7 @@ class AuthController extends Controller
         }
 
         $user = Auth::user();
-        return response()->json([
-            'user' => $user,
+        return response()->json([            
             'authorization' => [
                 'token' => $token,
                 'type' => 'bearer',
@@ -63,8 +62,7 @@ class AuthController extends Controller
         $pegawai = Pegawai::where('id', $user->pegawai_id)->first();
         
         return response()->json([
-            'username' => $user->username,
-            'password' => $user->password,
+            'username' => $user->username,           
             'nama' => $pegawai ? $pegawai->nama : null,
             'nip' => $pegawai ? $pegawai->nip : null
         ]);
