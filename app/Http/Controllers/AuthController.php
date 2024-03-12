@@ -7,7 +7,7 @@ use App\Models\pegawai;
 use Illuminate\Http\Request;
 use PHPOpenSourceSaver\JWTAuth\Contracts\Providers\Auth as ProvidersAuth;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+
 
 
 class AuthController extends Controller
@@ -32,7 +32,8 @@ class AuthController extends Controller
         }
 
         $user = Auth::user();
-        return response()->json([            
+        return response()->json([
+            'user' => $user,
             'authorization' => [
                 'token' => $token,
                 'type' => 'bearer',

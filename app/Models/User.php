@@ -33,4 +33,5 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsTo(hakakses::class,'id','hakakses');
     }
+    
 }
